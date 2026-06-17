@@ -25,7 +25,7 @@ The goal of this analysis is to demonstrate how advanced SQL workflows can trans
 
 # 🗂️ The Analysis
 
-All data processing scripts are organized inside the [Project_sql folder](/sales/project_sql/) folder. Below is an overview of what each script accomplishes:
+All data processing scripts are organized inside the [sale_sql_queries folder](/Sales_Perfomance_Project/sales_sql_queries/) folder. Below is an overview of what each script accomplishes:
 
 ### 1. Data Ingestion & Table Initialization
 * **File:** `1_Creating_sales_table.sql`
