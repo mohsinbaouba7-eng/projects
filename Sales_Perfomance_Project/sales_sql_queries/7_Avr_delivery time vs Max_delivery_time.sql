@@ -8,5 +8,3 @@ SELECT
     MaX_delivery_time ;
 
 
-SELECT *
-FROM sales_table

@@ -31,4 +31,4 @@ SELECT
     ROUND((SUM("Total_Profit") / SUM("Total_Revenue")) * 100, 2) AS PROFIT_MARGIN
 
 FROM 
-sales_table;
+sales_table; 
