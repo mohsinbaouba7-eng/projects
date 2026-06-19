@@ -45,6 +45,58 @@ All data processing scripts are organized inside the [sale_sql_queries folder](/
 * **File:** `1_Creating_sales_table.sql`
 * **Purpose:** Sets up the database schema, defines accurate data types (e.g., handling numeric fields for precision), and manages the initial import structure for the `10000 Sales Records.csv` dataset.
 
+```sql
+- 1- CREATING sales_table 
+
+CREATE TABLE sales_table (
+    "Region" VARCHAR(100),
+    "Country" VARCHAR(100),
+    "Item_Type" VARCHAR(100),
+    "Sales_Channel" VARCHAR(50),
+    "Order_Priority" VARCHAR(10),
+    "Order_Date" DATE,               -- Safe to use DATE now (MDY format)
+    "Order_ID" BIGINT,               -- IDs can be large, BIGINT prevents overflow
+    "Ship_Date" DATE,                -- Safe to use DATE now
+    "Units_Sold" INT,
+    "Unit_Price" NUMERIC(10,2),
+    "Unit_Cost" NUMERIC(10,2),
+    "Total_Revenue" NUMERIC(15,2),
+    "Total_Cost" NUMERIC(15,2),
+    "Total_Profit" NUMERIC(15,2)
+);
+
+-- 2- LOADING DATA into sales_table 
+
+SET DATESTYLE = 'ISO, MDY';
+
+COPY sales_table
+FROM 'C:\cv portfolio\10000 Sales Records.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+
+
+SELECT *
+  FROM sales_table;
+
+
+  -- 3- CREATING DELIVERY TIME COLUMN
+
+ALTER TABLE sales_table
+ADD COLUMN delivery_time INT;
+
+-- 4. Populate the column with a calculated value 
+UPDATE sales_table
+SET delivery_time = "Ship_Date" - "Order_Date";
+
+SELECT *
+  FROM sales_table;
+
+SELECT 
+      column_name, data_type, character_maximum_length
+   FROM information_schema.columns
+   WHERE table_name = 'sales_table';
+   ```
+
+
 ### 2. General Business Health
 * **File:** `2_Total_financial_health_of_the_business.sql`
 * **Purpose:** Calculates high-level executive KPIs including **Total Revenue**, **Total Cost**, and **Total Net Profit** across the entire lifetime of the dataset to evaluate global business performance.
