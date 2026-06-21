@@ -127,7 +127,8 @@ GROUP BY
     sales_table."Item_Type"
 ORDER BY Total_Profit DESC;
 ```
-
+ The most profitable Item_type is
+"HOUSEHOLD", It is leading with $7,187,363,61 of Profit the result of 4336803 unit sold.
 ![Most Profitible Item](<Sales_Performance_Project/assets/Most profitable item.jpeg>) 
 *Bar Graph of the Most profitable Item sold; ChatGPT genetated this from my SQL query results*
 
