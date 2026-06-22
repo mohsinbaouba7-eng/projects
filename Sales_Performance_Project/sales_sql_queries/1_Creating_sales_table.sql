@@ -30,6 +30,11 @@ WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 SELECT *
   FROM sales_table;
 
+SELECT 
+      column_name, data_type, character_maximum_length
+   FROM information_schema.columns
+   WHERE table_name = 'sales_table';
+
 
   -- 3- CREATING DELIVERY TIME COLUMN
 
@@ -48,9 +53,6 @@ SELECT *
 
 
 
-SELECT 
-      column_name, data_type, character_maximum_length
-   FROM information_schema.columns
-   WHERE table_name = 'sales_table';
+
 
 
