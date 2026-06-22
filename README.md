@@ -133,7 +133,6 @@ ORDER BY Total_Profit DESC;
 
 <img src= "Sales_Performance_Project/assets/Most profitable item.jpeg" width="85%">
 
-
 *Bar Graph of the Most profitable Item sold; ChatGPT genetated this from my SQL query results*
 
 ### 4. Geographic & Regional Trends
@@ -149,7 +148,11 @@ FROM sales_table
 GROUP BY sales_table."Region"
 ORDER BY PROFIT_MARGIN DESC;
 ```
+
+
 <img src= "Sales_Performance_Project/assets/total profit total margin by region .jpeg" width="85%">
+
+*Bar Graph of total Profit and total Margin of different regions; ChatGPT genetated this from my SQL query results*
 
 ### 5. Historical Growth Tracking
 * **File:** `5_YoY_Growth.sql`
