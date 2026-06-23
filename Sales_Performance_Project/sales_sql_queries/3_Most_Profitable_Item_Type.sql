@@ -9,5 +9,6 @@ TO_CHAR(SUM(sales_table."Total_Profit"),'$99,999,999,999,99') AS Total_Profit
 FROM  sales_table
 GROUP BY
     sales_table."Item_Type"
-ORDER BY Total_Profit DESC;
+ORDER BY Total_Profit DESC
+limit 3;
 

@@ -110,7 +110,9 @@ SELECT
 FROM 
 sales_table;
 ```
-
+| global_revenue | global_cost | global_profit | profit_margin |
+| :--- | :--- | :--- | :--- |
+| $ 133,335,513,14 | $ 93,826,578,42 | $ 39,508,934,72 | 29.63 |
 
 ### 3. Product & Inventory Optimization
 * **File:** `3_Most_Profitable_Item_Type.sql`
@@ -127,9 +129,14 @@ GROUP BY
     sales_table."Item_Type"
 ORDER BY Total_Profit DESC;
 ```
+| Item_Type | total_unit_sold | total_profit |
+| :--- | :--- | :--- |
+| Household | 4 336 803 | $ 7,187,383.61 |
+| Cosmetics | 4 103 290 | $ 7,134,390.32 |
+| Office Supplies | 4 120 263 | $ 5,201,382.04 |
+
  The most profitable Item_type is
 "HOUSEHOLD", It is leading by $7,187,363,61 of Profit with 4336803 units sold.
-
 
 <img src= "Sales_Performance_Project/assets/Most profitable item.jpeg" width="85%">
 
@@ -212,12 +219,41 @@ ORDER BY sales_year DESC, sales_month DESC;
 * **File:** `6_May_Profit 2016 vs 2017.sql`
 * **Purpose:** Performs a localized comparative analysis isolating specific calendar periods (May 2016 vs. May 2017) to study short-term variance, seasonal spikes, or anomalies in customer purchasing behavior.
 
+```sql
+SELECT 
+
+-- 2017 Profit
+    TO_CHAR(SUM(CASE WHEN sales_year = 2017 THEN "Total_Profit" END),'$99,999,999,999,99') AS profit_may_2017,
+    -- 2016 Profit
+   TO_CHAR(SUM(CASE WHEN sales_year = 2016 THEN "Total_Profit" END),'$99,999,999,999,99') AS profit_may_2016,
+    
+    -- Net Difference
+    To_CHAR(
+        SUM(CASE WHEN sales_year = 2017 THEN "Total_Profit" END) - 
+        SUM(CASE WHEN sales_year = 2016 THEN "Total_Profit" END),
+    '$99,999,999,999,99' ) AS net_diefference,
+
+    ROUND(
+    (SUM(CASE WHEN sales_year = 2017 THEN "Total_Profit" END) / 
+     SUM(CASE WHEN sales_year = 2017 THEN "Total_Revenue" END)) * 100,
+    2
+) AS profit_margin_2017,
+    
+
+  ROUND(
+    (SUM(CASE WHEN sales_year = 2016 THEN "Total_Profit" END) / 
+        SUM(CASE WHEN sales_year = 2016 THEN "Total_Revenue" END)) * 100,
+    2
+)  AS profit_margin_2016
+
+FROM sales_table
+WHERE sales_month = 5;
 
 
+SELECT*
+FROM sales_table;
 
-
-
-
+```
 
 ### 7. Logistics & Supply Chain Efficiency
 * **File:** `7_Avr_delivery time vs Max_delivery_time.sql`
@@ -236,7 +272,20 @@ SELECT
 SELECT *
 FROM sales_table;
 ```
-
+| Item_Type | avg_delivery_time | max_delivery_time |
+| :--- | :---: | :---: |
+| Vegetables | 23.93 | 50 |
+| Household | 24.39 | 50 |
+| Personal Care | 24.44 | 50 |
+| Fruits | 24.66 | 50 |
+| Office Supplies | 25.00 | 50 |
+| Cosmetics | 25.27 | 50 |
+| Beverages | 25.34 | 50 |
+| Baby Food | 25.36 | 50 |
+| Clothes | 25.38 | 50 |
+| Meat | 25.41 | 50 |
+| Cereal | 25.52 | 50 |
+| Snacks | 26.08 | 50 |
 ---
 
 ## 💡 Key Technical Skills Demonstrated
