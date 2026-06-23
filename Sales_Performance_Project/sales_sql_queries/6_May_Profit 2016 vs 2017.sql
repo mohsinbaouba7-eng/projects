@@ -15,14 +15,14 @@ SELECT
     (SUM(CASE WHEN sales_year = 2017 THEN "Total_Profit" END) / 
      SUM(CASE WHEN sales_year = 2017 THEN "Total_Revenue" END)) * 100,
     2
-) AS profit_margin 2017,
+) AS profit_margin_2017,
     
 
   ROUND(
     (SUM(CASE WHEN sales_year = 2016 THEN "Total_Profit" END) / 
         SUM(CASE WHEN sales_year = 2016 THEN "Total_Revenue" END)) * 100,
     2
-)  AS profit_margin 2016
+)  AS profit_margin_2016
 
 FROM sales_table
 WHERE sales_month = 5;

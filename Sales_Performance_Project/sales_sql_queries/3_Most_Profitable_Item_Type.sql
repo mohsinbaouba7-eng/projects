@@ -11,4 +11,3 @@ GROUP BY
     sales_table."Item_Type"
 ORDER BY Total_Profit DESC;
 
-4336803
