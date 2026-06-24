@@ -1,4 +1,6 @@
 
+<div align = "justify">
+
 # 🎯 Introduction
 
 Welcome to my Sales Performance Analysis portfolio project! This project explores a dataset of **10,000 Global Sales Records** to uncover critical insights regarding company profitability, regional trends, operational efficiency, and year-over-year financial growth. 
@@ -7,7 +9,7 @@ The goal of this analysis is to demonstrate how advanced SQL workflows can trans
 
 ---
 # 🗺️ Background
-Driven by a desire to practice advanced SQL querying and real-world business intelligence, this portfolio project simulates the role of a Lead Data Analyst. The goal is to streamline complex sales data into actionable strategies—helping stakeholders easily pinpoint **high-growth regions**, **identify top-performing products**, and **optimize supply chain timelines**.
+Driven by a desire to practice advanced SQL querying and real-world business intelligence, this portfolio project simulates the role of a Lead Data Analyst. The goal is to streamline complex sales data into actionable strategies—helping stakeholders easily pinpoint **high-growth regions**, **identify the most profitable item type**, and **optimize supply chain timelines**.
 
 The analysis is built on a comprehensive **sales dataset featuring regions, item types, sales channels, order dates, and financial metrics (revenue, cost, and profit)**.
 
@@ -23,9 +25,11 @@ The analysis is built on a comprehensive **sales dataset featuring regions, item
 
 4.  How does sales performance vary across different global regions? 
 
-5. *Growth Trends:* What is our Year-over-Year (YoY) growth status? 
+5. What are the top 5 countries with the highest revenue?
 
-6. *Seasonal Deep-Dive:* How do profits compare specifically between May 2016 and May 2017? 
+6. *Growth Trends:* What is our Year-over-Year (YoY) growth status? 
+
+. *Seasonal Deep-Dive:* How do profits compare specifically between May 2016 and May 2017? 
 
 7. *Logistics Efficiency:* What does the gap look like between our average delivery times and maximum delivery times? 
 
@@ -96,10 +100,9 @@ SELECT
    WHERE table_name = 'sales_table';
    ```
 
-
 ### 2. General Business Health
 * **File:** `2_Total_financial_health_of_the_business.sql`
-* **Purpose:** Calculates high-level executive KPIs including **Total Revenue**, **Total Cost**, and **Total Net Profit** across the entire lifetime of the dataset to evaluate global business performance.
+* **Purpose:** Calculates high-level executive KPIs including **GLOBAL Revenue**, **Global Cost**, **Global Profit**, **Profit margins** across the entire lifetime of the dataset to evaluate global business performance.
 ```sql
 SELECT 
     TO_CHAR(SUM("Total_Revenue"), '$99,999,999,999,99') AS GLOBAL_REVENUE,
@@ -110,6 +113,8 @@ SELECT
 FROM 
 sales_table;
 ```
+TOTAL FINANCIAL HEALTH OF THE BUSINESS
+
 | global_revenue | global_cost | global_profit | profit_margin |
 | :--- | :--- | :--- | :--- |
 | $ 133,335,513,14 | $ 93,826,578,42 | $ 39,508,934,72 | 29.63 |
@@ -322,3 +327,5 @@ FROM sales_table;
 * **Aggregations & Filters:** Mastering structural clauses (`GROUP BY`, `HAVING`, mathematical operators) to compress 10,000 distinct data rows into clear executive summaries.
 
 # Conclusion
+
+</div>
