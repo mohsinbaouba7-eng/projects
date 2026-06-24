@@ -113,7 +113,7 @@ SELECT
 FROM 
 sales_table;
 ```
-TOTAL FINANCIAL HEALTH OF THE BUSINESS
+Total financial health of the Business
 
 | global_revenue | global_cost | global_profit | profit_margin |
 | :--- | :--- | :--- | :--- |
@@ -134,7 +134,7 @@ GROUP BY
     sales_table."Item_Type"
 ORDER BY Total_Profit DESC;
 ```
- The most profitable Item_type is "HOUSEHOLD", It is leading by $7,187,363,61 of Profit with 4336803 units sold.
+ The most profitable Item_type is **Household**. It is leading by $7,187,363,61 of Profit with 4336803 units sold.
 
 | Item_Type | total_unit_sold | total_profit |
 | :--- | :--- | :--- |
@@ -159,6 +159,7 @@ FROM sales_table
 GROUP BY sales_table."Region"
 ORDER BY PROFIT_MARGIN DESC;
 ```
+*Australia and Oceania have the highest Profit Margin despite the low-volume in sales. This means that  despite the lower sales volume there are a higher magin items*
 
 
 <img src= "Sales_Performance_Project/assets/total profit total margin by region .jpeg" width="85%">
@@ -190,7 +191,7 @@ Of the top 5 highest countries in terms of Total Revnue, TAIWAN leading by 113M 
 
 ### 6. Historical Growth Tracking
 * **File:** `5_YoY_Growth.sql`
-* **Purpose:** Utilizes advanced window functions (`LAG()`, `LEAD()`) to calculate **Year-over-Year (YoY) Growth Rates**. This determines whether the company's financial trajectories are accelerating or slowing down over time.
+* **Purpose:** Utilizes advanced window functions `LAG()` to calculate **Year-over-Year (YoY) Growth Rates**. This determines whether the company's financial trajectories are accelerating or slowing down over time.
 
  ```sql
 
@@ -241,6 +242,7 @@ SELECT
 FROM MonthlySales
 ORDER BY sales_year DESC, sales_month DESC;
 ```
+
 | sales_year | sales_month | current_year_sales | previous_year_sales | yoy_growth_percentage |
 | :---: | :---: | :--- | :--- | :---: |
 | **2017** | 7 | $ 170,797,235 | 169523562.82 | 0.75% |
@@ -289,12 +291,14 @@ FROM sales_table;
 
 ```
 *Total profit for the month of May grew by +$89,034.27 year-over-year, showing an impressive 21.5% increase in absolute baseline returns. This indicates a successful push in sales volume or market expansion during 2017*
+
 | profit_may_2017 | profit_may_2016 | net_profit_growth | profit_margin_2017 | profit_margin_2016 |
 | :--- | :--- | :--- | :--- | :--- |
 | $503,359.56 |$ 414,325.30 | $ 89,034.27 | 30.44 | 31.81 |
 
-**Conclusion:** *This pattern suggests that the 2017 growth was driven by high-volume sales of slightly lower-margin items, or potentially due to rising operational/unit costs. The business successfully traded a tiny bit of operational efficiency (margin) to capture a significantly larger pool of actual cash (total profit).*
+**Conclusion:** *This pattern suggests that the 2017 growth was driven by high-volume sales of slightly lower-margin items, or potentially due to rising operational/unit costs.* 
 
+*The business successfully traded a tiny bit of operational efficiency (margin) to capture a significantly larger pool of actual cash (total profit).*
 
 
 ### 8. Logistics & Supply Chain Efficiency
@@ -331,12 +335,24 @@ FROM sales_table;
 
 ## 💡 Key Technical Skills Demonstrated
 * **Time-Series Analysis:** Querying dates, extracting years/months, and comparing historical performance periods.
-* **Window Functions:** Employing statistical ranking and offset fields to build financial trend models without altering raw tables.
-* **Aggregations & Filters:** Mastering structural clauses (`GROUP BY`, `HAVING`, mathematical operators) to compress 10,000 distinct data rows into clear executive summaries.
-
-# Conclusion
+* **Window Functions:** Utilizing the `LEAD()` function to look forward across sequential rows, building financial trend models and evaluating comparative metrics without altering the raw data structure.
+* **Aggregations, Filters & Conditional Logic:** Mastering structural clauses (`WHERE`, `GROUP BY`, `ORDER BY`) and conditional expressions (`CASE WHEN`) to cleanly manipulate and compress 10,000 distinct data rows into clear executive summaries.
 
 
+# 🏁 Conclusion & Key Learnings
+
+This project served as an end-to-end simulation of a real-world Data Analyst workflow—moving from raw, unstructured data ingestion to executive-level business insights. 
+
+### 🧠 Core Technical & Analytical Takeaways:
+* **Advanced Ingestion & Type Optimization:** Configured rigorous table schemas using strict data boundaries (`NUMERIC(10,2)`, `BIGINT`) and parsed regional date standards (`SET DATESTYLE`) to guarantee zero-loss data ingestion.
+
+* **Granular Time-Series Modeling:** Leveraged advanced analytical features like the `LEAD()` window function to track Year-over-Year trends efficiently without costly, multi-pass table joins.
+
+* **The "Volume vs. Margin" Narrative:** Discovered that while absolute baseline profit surged by **21.5%** in certain periods (such as May 2016 vs. May 2017), the overall profit margin slightly contracted by **1.37%**. This highlighted a key business trade-off: sacrificing minor operational margin efficiency to secure a significantly larger market share and cash pool.
+
+* **Market-Specific Prioritization:** Isolated primary international strongholds, proving that targeted locations like **Taiwan ($113.1M)** and **Grenada ($107.3M)** anchor global revenue performance.
+
+Ultimately, this analysis proves that data cleaning and querying are only half the battle; translating raw database rows into actionable corporate strategy is what unlocks true business value.
 
 
 
