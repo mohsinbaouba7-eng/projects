@@ -29,9 +29,9 @@ The analysis is built on a comprehensive **sales dataset featuring regions, item
 
 6. *Growth Trends:* What is our Year-over-Year (YoY) growth status? 
 
-. *Seasonal Deep-Dive:* How do profits compare specifically between May 2016 and May 2017? 
+7. *Seasonal Deep-Dive:* How do profits compare specifically between May 2016 and May 2017? 
 
-7. *Logistics Efficiency:* What does the gap look like between our average delivery times and maximum delivery times? 
+8. *Logistics Efficiency:* What does the gap look like between our average delivery times and maximum delivery times? 
 
 ---
 # 🛠️ Tools & Technologies Used
