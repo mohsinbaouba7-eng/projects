@@ -244,7 +244,7 @@ ORDER BY sales_year DESC, sales_month DESC;
 ```
 *May was a massive success, shooting up over 26% compared to May 2016.*
 
-*The Surrounding Slumps: Interestingly, the months right before (April at -22.67%) and right after (June at -12.59%) saw heavy losses.*
+*Interestingly, the months right before (April at -22.67%) and right after (June at -12.59%) saw heavy losses.*
 
 | sales_year | sales_month | current_year_sales | previous_year_sales | yoy_growth_percentage |
 | :---: | :---: | :--- | :--- | :---: |
