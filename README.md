@@ -134,14 +134,13 @@ GROUP BY
     sales_table."Item_Type"
 ORDER BY Total_Profit DESC;
 ```
+ The most profitable Item_type is "HOUSEHOLD", It is leading by $7,187,363,61 of Profit with 4336803 units sold.
+
 | Item_Type | total_unit_sold | total_profit |
 | :--- | :--- | :--- |
 | Household | 4 336 803 | $ 7,187,383.61 |
 | Cosmetics | 4 103 290 | $ 7,134,390.32 |
 | Office Supplies | 4 120 263 | $ 5,201,382.04 |
-
- The most profitable Item_type is
-"HOUSEHOLD", It is leading by $7,187,363,61 of Profit with 4336803 units sold.
 
 <img src= "Sales_Performance_Project/assets/Most profitable item.jpeg" width="85%">
 
@@ -179,6 +178,8 @@ GROUP BY "Country"
 ORDER BY SUM("Total_Revenue") DESC
 LIMIT 5;
 ```
+of the top 5 highest countries in terms of Total Revnue we have TAIWAN leading by 113M Follwed by GRENADA 107M 
+
 | Country | total_revenue |
 | :--- | :--- |
 | Taiwan | $ 113,106,946 |
