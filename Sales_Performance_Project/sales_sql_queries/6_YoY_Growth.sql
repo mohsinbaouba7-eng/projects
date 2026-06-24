@@ -44,4 +44,5 @@ SELECT
     ) || '%' AS yoy_growth_percentage
 
 FROM MonthlySales
-ORDER BY sales_year DESC, sales_month DESC;
+ORDER BY sales_year DESC, sales_month DESC
+LIMIT 5;

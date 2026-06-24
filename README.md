@@ -235,10 +235,16 @@ SELECT
 FROM MonthlySales
 ORDER BY sales_year DESC, sales_month DESC;
 ```
-
+| sales_year | sales_month | current_year_sales | previous_year_sales | yoy_growth_percentage |
+| :---: | :---: | :--- | :--- | :---: |
+| **2017** | 7 | $ 170,797,235 | 169523562.82 | 0.75% |
+| **2017** | 6 | $ 124,732,019 | 142697882.08 | -12.59% |
+| **2017** | 5 | $ 165,377,278 | 130253934.66 | 26.97% |
+| **2017** | 4 | $ 106,894,915 | 138237629.74 | -22.67% |
+| **2017** | 3 | $ 140,984,549 | 172271071.51 | -18.16% |
 
 ### 7. Deep-Dive Seasonal Analysis
-* **File:** `6_May_Profit 2016 vs 2017.sql`
+* **File:** `6_May_Profit 2017 vs 2016.sql`
 * **Purpose:** Performs a localized comparative analysis isolating specific calendar periods (May 2016 vs. May 2017) to study short-term variance, seasonal spikes, or anomalies in customer purchasing behavior.
 
 ```sql
