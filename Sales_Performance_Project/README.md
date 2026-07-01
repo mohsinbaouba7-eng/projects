@@ -142,7 +142,7 @@ ORDER BY Total_Profit DESC;
 | Cosmetics | 4 103 290 | $ 7,134,390.32 |
 | Office Supplies | 4 120 263 | $ 5,201,382.04 |
 
-<img src= "Sales_Performance_Project/assets/Most profitable item.jpeg" width="85%">
+<img src="assets/Most%20profitable%20item.jpeg" width="85%">
 
 *Bar Graph of the Most profitable Item sold; ChatGPT genetated this from my SQL query results*
 
@@ -161,8 +161,7 @@ ORDER BY PROFIT_MARGIN DESC;
 ```
 *Australia and Oceania have the highest Profit Margin despite the low-volume in sales. This means that  despite the lower sales volume there are a higher magin items*
 
-
-<img src= "Sales_Performance_Project/assets/total profit total margin by region .jpeg" width="85%">
+<img src="assets/total%20profit%20total%20margin%20by%20region%20.jpeg" width="85%">
 
 *Bar Graph of total Profit and total Margin of different regions; ChatGPT genetated this from my SQL query results*
 
